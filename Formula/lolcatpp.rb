@@ -1,15 +1,15 @@
 class Lolcatpp < Formula
   desc "A lolcat reimplementation in C++ -- BLAZINGLY FAST"
   homepage "https://github.com/lolcatpp/lolcatpp"
-  url "https://github.com/lolcatpp/lolcatpp/archive/refs/tags/v2.4.0.tar.gz" # source_url_marker
-  sha256 "63a06d9f4ce67d1bfeb778471076593ac6cadafd9ff002984aeb8a7f9ee7c514" # source_sha_marker
+  url "https://github.com/lolcatpp/lolcatpp/archive/refs/tags/v2.5.0.tar.gz" # source_url_marker
+  sha256 "4e01f9dfc21f927d220159f7aa89b14b143c8e0024360d6bf54a04c55372e9ce" # source_sha_marker
   license "BSD-3-Clause"
 
   conflicts_with "lolcat", because: "both install a `lolcat` binary"
 
   resource "binary" do
-    url "https://github.com/lolcatpp/lolcatpp/releases/download/v2.4.0/lolcat-macos-arm64" # binary_url_marker
-    sha256 "e8b1fab927168563b3fd518d24dd5f84a98d311248a9a2845f590069166a3f30" # binary_sha_marker
+    url "https://github.com/lolcatpp/lolcatpp/releases/download/v2.5.0/lolcat-macos-arm64" # binary_url_marker
+    sha256 "eb330dcd4437182c0e648f2f6ef164ef890704f04c5638b4cecb00f7c96fd347" # binary_sha_marker
   end
 
   depends_on "cmake" => :build

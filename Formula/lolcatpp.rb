@@ -15,9 +15,6 @@ class Lolcatpp < Formula
   depends_on "cmake" => :build
   depends_on "boost" if Hardware::CPU.intel?
   depends_on "fmt" if Hardware::CPU.intel?
-  depends_on "icu4c" if Hardware::CPU.intel?
-  depends_on "zstd" if Hardware::CPU.intel?
-  depends_on "xz" if Hardware::CPU.intel?
 
   def install
     if Hardware::CPU.arm?
@@ -29,7 +26,7 @@ class Lolcatpp < Formula
       # Intel: Build from source with polyfills
       args = std_cmake_args + %W[
         -DBUILD_STATIC=OFF
-        -DCMAKE_PREFIX_PATH=#{Formula["fmt"].opt_prefix};#{Formula["boost"].opt_prefix};#{Formula["icu4c"].opt_prefix};#{Formula["zstd"].opt_prefix};#{Formula["xz"].opt_prefix}
+        -DCMAKE_PREFIX_PATH=#{Formula["fmt"].opt_prefix};#{Formula["boost"].opt_prefix}
       ]
 
       system "cmake", "-S", ".", "-B", "build", *args
